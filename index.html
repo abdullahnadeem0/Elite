@@ -76,13 +76,102 @@
     "sameAs":[]
   }
   </script>
+   <style>
+  /* ==========================
+   WATERMARK
+========================== */
+
+.watermark-container{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999999;
+    width: 290px;
+    pointer-events: none;
+}
+
+.watermark-box{
+    background: #000;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,.45);
+    animation: watermarkFloat 3s ease-in-out infinite,
+               watermarkGlow 2.5s ease-in-out infinite;
+}
+
+.watermark-text{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .6px;
+    white-space: nowrap;
+}
+
+.watermark-text strong{
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Floating Animation */
+@keyframes watermarkFloat{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-6px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* Glow Animation */
+@keyframes watermarkGlow{
+    0%{
+        box-shadow:0 0 8px rgba(255,255,255,.08);
+    }
+    50%{
+        box-shadow:0 0 18px rgba(255,255,255,.35);
+    }
+    100%{
+        box-shadow:0 0 8px rgba(255,255,255,.08);
+    }
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+    .watermark-container{
+        right:12px;
+        bottom:12px;
+    }
+
+    .watermark-box{
+        padding:10px 18px;
+    }
+
+    .watermark-text{
+        font-size:12px;
+    }
+
+}
+ </style>              <!-- Watermark -->
+
 </head>
 
 <body
   class="bg-[var(--bg-primary)] text-[var(--text-primary)] font-outfit antialiased selection:bg-amber-500/20 selection:text-amber-900 transition-colors duration-500 overflow-x-hidden"
 >
   <div id="root"></div>
-
+<div class="watermark-container">
+    <div class="watermark-box">
+        <span class="watermark-text">
+            Developed by <strong>Abdullah Nadeem</strong>
+        </span>
+    </div>
+</div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
