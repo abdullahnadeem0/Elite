@@ -1,0 +1,6 @@
+{
+  "name": "Elite Shoes",
+  "description": "World-class luxury footwear store with premium design, interactive color themes, rich product customization, wishlist, comparison tool, user accounts, and seamless checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
